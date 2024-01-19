@@ -37,7 +37,13 @@ print(headers_2023_final)
 
 # CRIANDO UM DATA FRAME EM PANDAS PASSANDO AS LINHAS COLETADAS E VISUALIZANDO AS 10 PRIMEIRAS LINHAS
 stats_2023 = pd.DataFrame(players_stats_2023, columns = headers_2023_final)
-stats_2023.head(10)
+stats_2023.head()
 
-print(stats_2023.head(10))
+
+# VISUALIZAÇÃO DAS 10 PRIMEIRAS LINHAS DO FRAME
+print(stats_2023.head())
+
+
+# VISUALIZAÇÃO DO TOTAL DE LINHAS E COLUNAS
+print(stats_2023.shape)
 
