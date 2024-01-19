@@ -28,3 +28,16 @@ players_stats_2023 = [[td.getText() for td in rows[i].findAll('td')] for i in ra
 # VISUALIZANDO O CABEÇALHO DAS COLUNAS
 headers_2023 = [th.getText() for th in soup_nba.findAll('tr', limit=2)[0].findAll('th')]
 print(headers_2023)
+
+
+# CRIANDO UMA NOVA VARIÁVEL PARA PEGAR TODAS AS COLUNAS IGNORANDO O CAMPO DE RK
+headers_2023_final = headers_2023[1:]
+print(headers_2023_final)
+
+
+# CRIANDO UM DATA FRAME EM PANDAS PASSANDO AS LINHAS COLETADAS E VISUALIZANDO AS 10 PRIMEIRAS LINHAS
+stats_2023 = pd.DataFrame(players_stats_2023, columns = headers_2023_final)
+stats_2023.head(10)
+
+print(stats_2023.head(10))
+
