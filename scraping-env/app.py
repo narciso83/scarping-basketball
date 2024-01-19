@@ -19,3 +19,12 @@ print(page)
 html_nba = urlopen(url_nba)
 soup_nba = BeautifulSoup(html_nba, features="html.parser")
 
+
+# INFORMANDO AS TAGS ONDE ESTÃO OS CÓDIGOS QUE SERÃO COLETADOS (as tags linhas estão dentro da tag td)
+rows = soup_nba.findAll('tr')[1:]
+players_stats_2023 = [[td.getText() for td in rows[i].findAll('td')] for i in range(len(rows))]
+
+
+# VISUALIZANDO O CABEÇALHO DAS COLUNAS
+headers_2023 = [th.getText() for th in soup_nba.findAll('tr', limit=2)[0].findAll('th')]
+print(headers_2023)
